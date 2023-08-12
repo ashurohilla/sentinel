@@ -151,7 +151,7 @@ class logginout(models.Model):
     total_time = models.CharField(max_length=180)
     endreport = models.CharField(max_length=500, default=True) 
     class Meta:
-        db_table = "loggingout"           
+        db_table = "loggingout"                 
         
         
         
@@ -176,8 +176,9 @@ class desktopfile(models.Model):
  
 class ideltime(models.Model):
     organization_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField(auto_now=False, auto_now_add=False)  
-    idealtime =  models.CharField( max_length=50)   
+    date = models.DateField( auto_now_add=True)  
+    localtime = models.CharField(max_length=140 , default=False)
+    idealtime =  models.CharField( max_length=140)   
     
     
     
