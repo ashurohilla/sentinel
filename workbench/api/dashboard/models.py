@@ -148,6 +148,7 @@ class logginout(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField( auto_now_add=True)
     logout_time = models.CharField(max_length=130)
+    total_time = models.CharField(max_length=180)
     endreport = models.CharField(max_length=500, default=True) 
     class Meta:
         db_table = "loggingout"           
@@ -157,7 +158,7 @@ class logginout(models.Model):
         
 class screenshotsModel(models.Model):
     organization_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.FileField(upload_to='images/' )     
+    image = models.FileField(upload_to='screenshots/' )     
     time =  models.CharField( max_length=130)                       
 
 
